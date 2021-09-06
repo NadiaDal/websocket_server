@@ -1,5 +1,5 @@
 import * as Automerge from 'automerge';
-import {Document} from '../types/automerge';
+import {Document} from '../types';
 
 class AutomergeStore {
     private document: Automerge.FreezeObject<Document>;
@@ -12,7 +12,7 @@ class AutomergeStore {
         return this.document.items;
     }
 
-    allChanges(): Automerge.Change[] | undefined {
+    allChanges(): Automerge.Change[] {
         return Automerge.getAllChanges(this.document);
     }
 

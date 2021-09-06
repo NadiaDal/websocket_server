@@ -3,7 +3,7 @@ import * as http from 'http';
 import * as WebSocket from 'ws';
 import {AddressInfo} from 'node:net'
 import AutomergeStore from './automerge';
-import {Action, InitMessage, Message} from './types/websockets';
+import {Action, InitMessage, Message} from './types';
 
 const app = express();
 
