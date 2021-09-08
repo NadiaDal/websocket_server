@@ -12,6 +12,17 @@ class AutomergeStore {
         return this.document.items;
     }
 
+    persist(): string {
+        return Automerge.save(this.document);
+    }
+
+
+    restore(store: string | null): void {
+        if (store) {
+            this.document = Automerge.load(store);
+        }
+    }
+
     allChanges(): Automerge.Change[] {
         return Automerge.getAllChanges(this.document);
     }
